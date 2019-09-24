@@ -1,7 +1,8 @@
 class Cell {
-  int size = 15;
+  
   int row;
   int col;
+  boolean visited = false;
   boolean[] walls;
   Cell(int i, int j) {
     this.row = i;
@@ -23,4 +24,13 @@ class Cell {
       line(row * size, col * size, row * size, col * size + size);//left
     }
   }
+  
+  void highlight(){
+    fill(255);
+    //ellipseMode(CORNER);
+    //ellipse(row * size + size / 4, col * size + size / 4, size / 2, size / 2);
+    rect(row * size, col * size, size, size);
+  }
+  
+  
 }
